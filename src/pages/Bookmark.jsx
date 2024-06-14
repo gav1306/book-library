@@ -16,7 +16,7 @@ const Bookmark = () => {
           </span>
         </div>
       )}
-      {books && <BookSection books={books} />}
+      {books && <BookSection books={books} disabledBookmark={true} />}
     </section>
   );
 };

@@ -19,7 +19,7 @@ const StarRating = ({ rating }) => {
   return <div className="flex gap-1">{stars}</div>;
 };
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, disabledBookmark }) => {
   const author = book.author_name[0];
   const edition = book.edition_count;
   const title = book.title;
@@ -44,16 +44,18 @@ const BookCard = ({ book }) => {
           </div>
           <StarRating rating={rating} />
         </CardDescription>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-2 right-2  z-10"
-          onClick={() => {
-            saveBook(book);
-          }}
-        >
-          <Heart color="#fff" strokeWidth={0.75} fill="#e11d48" />
-        </Button>
+        {!disabledBookmark && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-2 right-2  z-10"
+            onClick={() => {
+              saveBook(book);
+            }}
+          >
+            <Heart color="#fff" strokeWidth={0.75} fill="#e11d48" />
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
