@@ -30,14 +30,14 @@ const Home = () => {
 
   return (
     <section className="flex flex-col gap-5 h-full">
-      <div className="flex w-[500px]">
+      <div className="flex flex-col gap-2 w-full md:flex-row md:gap-0 md:w-[500px]">
         <Input
-          className="rounded-r-none"
+          className="md:rounded-r-none"
           onChange={searchHandler}
           placeholder="Eg. Bridgerton"
         />
         <Button
-          className="rounded-l-none"
+          className="md:rounded-l-none"
           disabled={!search || isLoading}
           onClick={submitHandler}
         >
